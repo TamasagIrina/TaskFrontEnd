@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Task</th>
+      <th>Status</th>
+      <th>Asignat</th>
+      <th>Creat de</th>
+      <th>Data creării</th>
+      <th>Termen limită</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (task of tasks; track task.taskId) {
+      <tr>
+        <td>{{ task.taskId }}</td>
+        <td>{{ task.taskName }}</td>
+        <td>{{ task.statusName }}</td>
+        <td>{{ task.username }}</td>
+        <td>{{ task.createdBy }}</td>
+        <td>{{ task.creationDate }}</td>
+        <td>{{ task.dueDate }}</td>
+      </tr>
+    } @empty {
+      <tr>
+        <td colspan="7">Nu ai niciun task momentan.</td>
+      </tr>
+    }
+  </tbody>
+</table>

@@ -27,7 +27,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
             "scripts": []
           },
@@ -54,6 +55,7 @@
             }
           },
           "defaultConfiguration": "production"
+      
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -92,5 +94,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9a0b5d59-5334-47d0-9671-b8cd18c2d340"
   }
 }
