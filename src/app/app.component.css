@@ -15,7 +15,8 @@ nav a {
   font-weight: 500;
   padding: 8px 14px;
   border-radius: 6px;
-  padding-left: 100px;
+  padding-left: 138px;
+  padding-right: 138px;
   transition: color 0.15s ease, background-color 0.15s ease;
 }
 

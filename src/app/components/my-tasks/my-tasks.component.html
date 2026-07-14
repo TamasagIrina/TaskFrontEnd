@@ -1,30 +1,28 @@
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Task</th>
-      <th>Status</th>
-      <th>Asignat</th>
-      <th>Creat de</th>
-      <th>Data creării</th>
-      <th>Termen limită</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for (task of tasks; track task.taskId) {
+@if (loading()) {
+  <p>Se încarcă...</p>
+} @else if (error()) {
+  <p>Eroare: {{ error() }}</p>
+} @else {
+  <table>
+    <thead>
       <tr>
-        <td>{{ task.taskId }}</td>
-        <td>{{ task.taskName }}</td>
-        <td>{{ task.statusName }}</td>
-        <td>{{ task.username }}</td>
-        <td>{{ task.createdBy }}</td>
-        <td>{{ task.creationDate }}</td>
-        <td>{{ task.dueDate }}</td>
+        <th>Due Date</th>
+        <th>Subject</th>
+        <th>Status</th>
       </tr>
-    } @empty {
-      <tr>
-        <td colspan="7">Nu ai niciun task momentan.</td>
-      </tr>
-    }
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      @for (task of sortedTasks(); track task.taskId) {
+        <tr>
+          <td>{{ task.dueDate }}</td>
+          <td>{{ task.taskName }}</td>
+          <td>{{ task.statusName }}</td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="3">Nu ai niciun task momentan.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}

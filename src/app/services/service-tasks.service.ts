@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { TaskDTOResponse } from '../interfaces/TaskDTOResponse';
+import { TaskCreateDTO } from '../interfaces/TaskDTOCreate';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class ServiceTasksService {
     return this.http.get<TaskDTOResponse[]>(this.apiUrl);
   }
 
-  addTask(task: any) {
+  addTask(task: TaskCreateDTO) {
     return this.http.post(this.apiUrl, task);
   }
 }
