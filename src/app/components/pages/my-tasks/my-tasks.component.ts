@@ -1,6 +1,6 @@
 import { Component, computed, inject, OnInit, signal } from '@angular/core';
-import { ServiceTasksService } from '../../services/service-tasks.service';
-import { TaskDTOResponse } from '../../interfaces/TaskDTOResponse';
+import { ServiceTasksService } from '../../../services/service-tasks.service';
+import { TaskDTOResponse } from '../../../interfaces/TaskDTOResponse';
 
 @Component({
   selector: 'app-my-tasks',
@@ -22,7 +22,7 @@ export class MyTasksComponent implements OnInit {
       const dateA = new Date(a.dueDate).getTime();
       const dateB = new Date(b.dueDate).getTime();
       
-      return dateB - dateA; 
+      return dateA - dateB; 
     });
   });
 
@@ -41,6 +41,10 @@ export class MyTasksComponent implements OnInit {
         this.loading.set(false);
       }
     });
+  }
+  openEditTaskModal(task: TaskDTOResponse) {
+    
+
   }
 
 }

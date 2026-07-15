@@ -17,4 +17,9 @@ export class ServiceTasksService {
   addTask(task: TaskCreateDTO) {
     return this.http.post(this.apiUrl, task);
   }
+
+  updateTask(taskId: number, task: TaskCreateDTO) {
+    const url = `${this.apiUrl}/${taskId}`;
+    return this.http.put(url, task);
+  }
 }

@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { MyTasksComponent } from './components/my-tasks/my-tasks.component';
-import { SearchComponent } from './components/search/search.component';
-import { NewTaskComponent } from './components/new-task/new-task.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { MyTasksComponent } from './components/pages/my-tasks/my-tasks.component';
+import { SearchComponent } from './components/pages/search/search.component';
+import { NewTaskComponent } from './components/pages/new-task/new-task.component';
 
 export const routes: Routes = [
     {path: 'home',component: HomeComponent},
